@@ -1,0 +1,64 @@
+@keyframes scale-flame {
+    from {transform: scale(1);}
+    to {transform: scale(1.1);}
+}
+@keyframes scale-heart {
+    from {transform:  translate(-50%, -50%) scale(1);}
+    to {transform:  translate(-50%, -50%) scale(8);}
+}
+body {
+    color: #212529;
+}
+header {
+    position: relative;
+    width: 100%;
+    height:100vh;
+    background-image: linear-gradient(to right bottom,#fff,#fff,#fff,#fff,#fff,#f7f4ff,#f3e8fd,#f1dbf9,#f5bce8,#fd99c9,#ff749e,#fd5068);
+    &:before {
+        content: '❤️';
+        position: absolute;
+        top:50%;
+        left: 50%;
+        font-family:'raleway',
+        Arial,sans-serif;
+        font-size: 50px;
+        opacity:.025;
+        animation-name: scale-heart;
+        animation-duration: 15s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    .title {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform:  translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        &__img {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            animation-name: scale-flame;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        &__h1 {
+            font-family: 'raleway';
+            font-size: 50px;
+            font-weight: normal;
+            color:#fd5068;
+            line-height: 75px;
+            text-transform: uppercase;
+        }
+        &__span {
+            font-family: 'noto serif';
+            font-size: 18px;
+            color: #212529;
+        }
+    }
+}
